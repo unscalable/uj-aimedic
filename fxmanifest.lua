@@ -21,5 +21,3 @@ shared_scripts {
     '@qb-core/import.lua',
     'config.lua'
 } 
-
--- You do not have authorization to resell or redistribut this script 
