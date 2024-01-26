@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject(),
 
 QBCore.Functions.CreateCallback('aimedic:docOnline', function(source, cb)
 	local src = source
