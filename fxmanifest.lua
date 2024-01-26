@@ -4,9 +4,9 @@ game 'gta5'
 
 description 'AIMedic'
 
-author 'Nightrider'
+author 'unscalable'
 
-version '1.0.5'
+version '1.0.0'
 
 
 client_scripts {
