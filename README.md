@@ -49,7 +49,7 @@ Config = {
     Command = {
         Name = "aimedic",
     },
-}```
+}``
 
 ## Usage
 
