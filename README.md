@@ -52,4 +52,12 @@ Config = {
     Command = {
         Name = "aimedic",
     },
-```}
+}```
+
+## Usage
+
+Players can use the command `/aimedic` during their last stand to request assistance. AI medics will spawn, perform a revival process, and charge the player based on the configured payment settings.
+
+```lua
+-- Example usage
+/aimedic
