@@ -52,4 +52,4 @@ Config = {
     Command = {
         Name = "aimedic",
     },
-}```
+```}
