@@ -1,4 +1,4 @@
-# AImedic System
+# uj-AImedic
 
 AImedic is a roleplaying script for a gaming environment that simulates a medical system where players can request assistance from AI medics.
 
@@ -21,24 +21,18 @@ AImedic is a roleplaying script for a gaming environment that simulates a medica
 ## Requirements
 
 - [QBCore Framework](https://github.com/qbcore-framework/qb-core)
-- [qb-bossmenu Framework](https://github.com/qbcore-framework/qb-bossmenu) (For managing organization finances)
 
 ## Installation
 
-1. get the repository:
+1. Get the repository:
+- [uj-aimedic](https://github.com/unscalable/uj-aimedic)
 
-    ```https://github.com/unscalable/uj-aimedic
-    ```
-
-2. Navigate to the resources folder and add is in your stan:
-
-    ```[standalone]
-    ```
+2. Navigate to the resources folder and add it in your [standalone]:
 
 3. Ensure required dependencies are installed.
 
-4. Customize the configuration in `config.lua` to fit your ```server's needs.
--- Example configuration
+4. Customize the configuration in `config.lua` to fit your server's needs.
+```-- Example configuration
 Config = {
     EMS = {
         DoctorMinRequirement = 1,
@@ -59,11 +53,3 @@ Config = {
         Name = "aimedic",
     },
 }```
-
-## Usage
-
-Players can use the command `/aimedic` during their last stand to request assistance. AI medics will spawn, perform a revival process, and charge the player based on the configured payment settings.
-
-```lua
--- Example usage
-/aimedic
