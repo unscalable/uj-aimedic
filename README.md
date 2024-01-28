@@ -8,9 +8,6 @@ AImedic is a roleplaying script for a gaming environment that simulates a medica
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Configuration](#configuration)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
