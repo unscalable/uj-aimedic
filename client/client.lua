@@ -4,21 +4,24 @@ local Active = false
 local test1 = nil
 local spam = true
 
-RegisterCommand("medic", function(source, args, raw)
-    if (QBCore.Functions.GetPlayerData().metadata["isdead"] or QBCore.Functions.GetPlayerData().metadata["inlaststand"]) and spam then
+RegisterCommand(Config.CommandName, function(source, args, raw)
+    local player = source
+
+    if (QBCore.Functions.GetPlayerData().metadata["isdead"] or QBCore.Functions.GetPlayerData().metadata["inlaststand"]) then
         QBCore.Functions.TriggerCallback('aimedic:docOnline', function(EMSOnline, hasEnoughMoney)
-            if EMSOnline <= Config.Doctor and hasEnoughMoney and spam then
+            if EMSOnline <= Config.Doctor and hasEnoughMoney then
                 SpawnMedic()
                 TriggerServerEvent('aimedic:charge')
                 Notify("Your medic is on the way")
             else
+                -- Handle notification for insufficient EMS or money
                 if EMSOnline > Config.Doctor then
-                    Notify("There are too many EMT's online", "error")
+                    Notify("There are currently " .. EMSOnline .. " EMT's online. The maximum allowed is " .. Config.Doctor, "error")
                 elseif not hasEnoughMoney then
                     Notify("Not Enough Money", "error")
                 else
-                    Notify("Wait EMT's are on the Way", "primary")
-                end	
+                    Notify("Wait, EMT's are on the Way. Current EMT count: " .. EMSOnline, "primary")
+                end
             end
         end)
     else
@@ -74,7 +77,8 @@ function DoctorNPC()
         Citizen.Wait(1000)
     end
 
-    TaskPlayAnim(test1, "mini@cpr@char_a@cpr_str","cpr_pumpchest",1.0, 1.0, -1, 9, 1.0, 0, 0, 0)
+    TaskPlayAnim(test1, "mini@cpr@char_a@cpr_str", "cpr_pumpchest", 1.0, 1.0, -1, 9, 1.0, 0, 0, 0)
+
     QBCore.Functions.Progressbar("revive_doc", "The medic is treating you", Config.ReviveTime, false, false, {
         disableMovement = false,
         disableCarMovement = false,
@@ -84,7 +88,7 @@ function DoctorNPC()
         ClearPedTasks(test1)
         Citizen.Wait(500)
         TriggerEvent("hospital:client:Revive") -- Change this line if your server uses a different event for player revival
-        Notify("Your treatment is complete. You have been charged: "..Config.Price, "success")
+        Notify("Your treatment is complete. You have been charged: " .. Config.Price, "success")
         RemovePedElegantly(test1)
         spam = true
     end)
