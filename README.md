@@ -1,9 +1,69 @@
-# aimedic
+# AImedic System
 
-A simple NPC Medic script for QBcore. Drag the file into your resources, open the config, and set prices to match your server's economy. Use the command `/medic` 
+AImedic is a roleplaying script for a gaming environment that simulates a medical system where players can request assistance from AI medics.
+
+## Table of Contents
+
+- [Features](#features)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Configuration](#configuration)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Features
+
+- Allows players to request assistance from AI medics.
+- AI medics perform a revival process with a progress bar.
+- Configurable settings for EMS requirements, payment, and progress bar behavior.
+
+## Requirements
+
+- [QBCore Framework](https://github.com/qbcore-framework/qb-core)
+- [qb-bossmenu Framework](https://github.com/qbcore-framework/qb-bossmenu) (For managing organization finances)
 
 ## Installation
 
-1. Drag the script file into your resources.
-2. Open the configuration file and adjust prices to match your server's economy.
-3. Use the command `/medic` to activate the script.
+1. get the repository:
+
+    ```https://github.com/unscalable/uj-aimedic
+    ```
+
+2. Navigate to the resources folder and add is in your stan:
+
+    ```[standalone]
+    ```
+
+3. Ensure required dependencies are installed.
+
+4. Customize the configuration in `config.lua` to fit your ```server's needs.
+-- Example configuration
+Config = {
+    EMS = {
+        DoctorMinRequirement = 1,
+    },
+    Payment = {
+        Price = 1000,
+        Method = "bank",
+    },
+    ProgressBar = {
+        ReviveTime = 20000,
+        Text = "The medic is treating you",
+        DisableMovement = false,
+        DisableCarMovement = false,
+        DisableMouse = false,
+        DisableCombat = true,
+    },
+    Command = {
+        Name = "aimedic",
+    },
+}```
+
+## Usage
+
+Players can use the command `/aimedic` during their last stand to request assistance. AI medics will spawn, perform a revival process, and charge the player based on the configured payment settings.
+
+```lua
+-- Example usage
+/aimedic
