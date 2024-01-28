@@ -46,3 +46,4 @@ AddEventHandler('aimedic:charge', function()
     TriggerEvent("qb-bossmenu:server:addAccountMoney", 'ambulance', Config.Price)
 end)
 
+--v1,1

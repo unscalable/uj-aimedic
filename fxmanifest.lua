@@ -6,7 +6,7 @@ description 'AIMedic'
 
 author 'unscalable'
 
-version '1.0.0'
+version '1.0.1'
 
 
 client_scripts {
